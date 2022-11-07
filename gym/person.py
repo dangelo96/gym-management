@@ -1,6 +1,6 @@
 from abc import ABC
 
-from .plan import Plan
+from .plan import PlanType
 
 class Person(ABC):
     """The base class to represent a person in the system."""
@@ -25,7 +25,7 @@ class Member(Person):
 
     def __init__(
         self, name: str, phone: str, surname: str, address: str, birth_date: str, 
-        email: str, active: bool, plan_type: Plan, start_date: str, id=None
+        email: str, active: bool, plan_type: PlanType, start_date: str, id=None
     ) -> None:
         super().__init__(name, phone, surname, address, birth_date)
         self._id = id
