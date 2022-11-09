@@ -24,7 +24,7 @@ def add(plan_type: PlanType) -> int:
 
     if len(result_set) > 0:
         added_plan_type: tuple = result_set[0]
-        added_id: int = added_plan_type["id"]
+        added_id = added_plan_type["id"]
     
     return added_id
 
@@ -32,8 +32,8 @@ def delete_by_id(id: int) -> None:
     """
     Given an id, deletes the related plan type.
 
-    Parameter
-    ---------
+    Parameters
+    ----------
         id: int
             The id from the plan type about to be deleted.
 
@@ -52,7 +52,7 @@ def get_all() -> list:
 
     Parameters
     ----------
-        No parameters for this function.
+        None.
     
     Returns
     -------
@@ -75,7 +75,7 @@ def get_all() -> list:
 
 def get_by_id(id: int) -> PlanType:
     """
-    Given an id, returns only one plan type (if available).
+    Given an id, returns the related plan type (if available).
 
     Parameters
     ----------
@@ -96,7 +96,7 @@ def get_by_id(id: int) -> PlanType:
     result_set: list = run_sql(statement, values)
     
     if len(result_set) > 0:
-        returned_plan_type = result_set[0]
+        returned_plan_type: tuple = result_set[0]
         plan_type = PlanType(
             plan=returned_plan_type["plan"],
             id=returned_plan_type["id"]
@@ -106,12 +106,12 @@ def get_by_id(id: int) -> PlanType:
 
 def update(plan_type: PlanType) -> None:
     """
-    Given an updated Plan Type, inserts the new features into the database.
+    Given an updated Plan Type, inserts its new features into the database.
 
     Parameters
     ---------
         plan_type: PlanType
-            An already updated PlanType by the user, about to be updated inside the DB.
+            An already updated PlanType, about to be updated inside the DB.
 
     Returns
     -------

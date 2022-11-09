@@ -7,11 +7,11 @@ class Person(ABC):
     """The base class to represent a person in the system."""
 
     def __init__(self, 
-    name: Optional[str]=None, 
-    phone: Optional[str]=None, 
-    address: Optional[str]=None, 
-    surname: Optional[str]=None, 
-    birth_date: Optional[str]=None
+        name: Optional[str] = None, 
+        phone: Optional[str] = None, 
+        address: Optional[str] = None, 
+        surname: Optional[str] = None, 
+        birth_date: Optional[str] = None
     ) -> None:
         super().__init__()
         self._name: str = name
@@ -64,12 +64,12 @@ class Instructor(Person):
     """A person who is part of the gym staff."""
 
     def __init__(self,
-    name: Optional[str]=None, 
-    phone: Optional[str]=None, 
-    address: Optional[str]=None, 
-    surname: Optional[str]=None, 
-    birth_date: Optional[str]=None,
-    id: Optional[int]=None
+        id: Optional[int] = None,
+        name: Optional[str] = None, 
+        phone: Optional[str] = None, 
+        address: Optional[str] = None, 
+        surname: Optional[str] = None, 
+        birth_date: Optional[str] = None
     ) -> None:
         super().__init__(name, phone, surname, address, birth_date)
         self._id: int = id
@@ -80,25 +80,25 @@ class Instructor(Person):
     
     @id.setter
     def id(self, _id: int) -> None:
-        self._id = _id
+        self._id: int = _id
 
 class Member(Person):
     """A person who frequents the gym."""
 
     def __init__(self, 
-    name: Optional[str]=None, 
-    phone: Optional[str]=None, 
-    address: Optional[str]=None, 
-    surname: Optional[str]=None, 
-    birth_date: Optional[str]=None,
-    id: Optional[int]=None,
-    email: Optional[str]=None,
-    active: Optional[bool]=None,
-    start_date: Optional[str]=None,
-    plan_type: Optional[PlanType]=None,
+        name: Optional[str] = None, 
+        phone: Optional[str] = None, 
+        address: Optional[str] = None, 
+        surname: Optional[str] = None, 
+        birth_date: Optional[str] = None,
+        id: Optional[int] = None,
+        email: Optional[str] = None,
+        active: Optional[bool] = None,
+        start_date: Optional[str] = None,
+        plan_type: Optional[PlanType] = None,
     ) -> None:
         super().__init__(name, phone, surname, address, birth_date)
-        self._id = id
+        self._id: int = id
         self._email: str = email
         self._active: bool = active
         self._start_date: str = start_date
